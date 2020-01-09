@@ -1,0 +1,28 @@
+{
+  "namespace": "nstda.nbt.demo",
+  "name": "key",
+  "type": "record",
+  "fields": [
+    {
+      "name": "projectId",
+      "type": "string",
+      "doc": "Project Id"
+    },
+    {
+      "name": "userId",
+      "type": "string",
+      "doc": "User Id"
+    },
+    {
+      "name": "datasetId",
+      "type": ["null", "string"],
+      "doc": "Dataset Id if not specified they will be $userId_$projectId",
+      "default": null
+    },
+    {
+      "name": "sampleIds",
+      "type": { "type": "array", "items": "string" },
+      "doc": "Specifies sampleIds... for this dataset id"
+    }
+  ]
+}

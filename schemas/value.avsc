@@ -1,0 +1,32 @@
+{
+  "namespace": "nstda.nbt.demo",
+  "name": "value",
+  "type": "record",
+  "__WORKFLOW_HOME_PATH_BY_ENVIRONMENT": {
+    "standard": "/path/to/home",
+    "tara": "/tarafs/biobank/data/share/pachyderm",
+    "colossus": "/colossus/home/krittin/share/pachyderm",
+    "pachyderm": "/share/pachyderm"
+  },
+  "fields": [
+    {
+      "name": "x",
+      "type": "int",
+      "doc": "X value",
+      "default": 100
+    },
+    {
+      "name": "ref",
+      "type": "string",
+      "doc": "My Genome Ref",
+      "default": "env://demo/my.ref",
+      "__type": "path"
+    },
+    {
+      "name": "need2",
+      "type": "boolean",
+      "doc": "Flag to specify power",
+      "default": false
+    }
+  ]
+}
