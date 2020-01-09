@@ -3,12 +3,18 @@ process Power2 {
 
   tag { "oat_${a}" }
 
-  input: val a
+  input: 
+  val a
 
-  output: val b
+  output: 
+  path "result.*.txt"
+  val a
 
-  exec:
-  b = a ** 2
+  script:
+  """
+  sleep 10
+  echo "${a ** 2}" > result.${a}.txt
+  """
 }
 
 process Power3 {
@@ -17,8 +23,11 @@ process Power3 {
 
   input: val a
 
-  output: val b
+  output:
+  set file("result.txt"), file(".command*")
 
-  exec:
-  b = a ** 3
+  script:
+  """
+  echo "${a ** 3}" > result.txt
+  """
 }

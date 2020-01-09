@@ -1,4 +1,6 @@
 
+include "./nbt/utils"
+
 process Sum {
 
   input: 
@@ -11,6 +13,23 @@ process Sum {
   exec:
   y = xs.sum()
   z = xs.sum() + 1
+}
+
+process Concat {
+
+  publishDir "${outputPrefixPath(params, task)}/oat"
+
+  input: 
+    path results
+  
+  output:
+    path "result.sum.txt"
+
+  script:
+  """
+  sleep 10
+  cat *.txt > result.sum.txt
+  """
 }
 
 

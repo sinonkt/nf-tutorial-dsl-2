@@ -16,6 +16,12 @@
       "default": 100
     },
     {
+      "name": "y",
+      "type": "int",
+      "doc": "Y value",
+      "default": 5
+    },
+    {
       "name": "ref",
       "type": "string",
       "doc": "My Genome Ref",
@@ -27,6 +33,15 @@
       "type": "boolean",
       "doc": "Flag to specify power",
       "default": false
+    },
+    {
+      "name": "output",
+      "type": "string",
+      "doc": "Output Dir Path",
+      "default": "launchDir://",
+      "__type": "dir",
+      "__required": false,
+      "__private": true
     }
   ]
 }
